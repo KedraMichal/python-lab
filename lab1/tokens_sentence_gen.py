@@ -1,11 +1,14 @@
+from nltk.tokenize import TweetTokenizer
 
-def generate_tokens(file):
+
+def generate_tokens_txt(file):
     with open(file, "r", encoding="utf8") as f:
-        for token in f.read().strip().replace(".", " .").replace(",", " ,").replace("\n", "").split(" "):
+        tkn = TweetTokenizer()
+        for token in tkn.tokenize(f.read().strip()):
             yield token
 
 
-def generate_sentences(file):
+def generate_sentences_txt(file):
     with open(file, "r", encoding="utf8") as f:
         for token in f.read().strip().replace("\n", "").replace(".",". ").split("  "):
             yield token
@@ -28,8 +31,5 @@ def generate_sentences_conll(file):
                 sentence = ""
 
 
-##token-1kolum,kripka tez token
-
-a = generate_tokens("nkjp.txt")
-for i in generate_tokens("nkjp.txt"):
+for i in generate_sentences_conll("nkjp.conll"):
     print(i)
