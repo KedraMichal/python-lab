@@ -10,7 +10,7 @@ def generate_tokens_txt(file):
 
 def generate_sentences_txt(file):
     with open(file, "r", encoding="utf8") as f:
-        for token in f.read().strip().replace("\n", "").replace(".",". ").split("  "):
+        for token in f.read().strip().replace("\n", "").replace(".",". ").split("  "):  # hack, nie zawsze skuteczny
             yield token
 
 
