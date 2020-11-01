@@ -1,7 +1,7 @@
 class Polynomial:
     """
-    Wielomian dziala w zbiorze licb rzeczywistych.
-    Natomiast nie dziala w zbiorze liczb zespolonych.
+    Wielomian dziala w zbiorze liczb rzeczywistych.
+    W zbiorze liczb zespolonych natomiast oblicza tylko wartosc wielomianu poprawnie
 
     Defaultdict bylby raczej dobrym pomyslem, gdzie klucz-stopien wykladnika, wartosc- wspolczynik,
     a dla niezdefiniowanych wartosci dla danych kluczy zawsze zwracaloby 0.
@@ -97,7 +97,6 @@ if __name__ == "__main__":
     print("Result of multiplying polynomials: {}".format(poly1 * poly2))
     print("Polynomial: {}, boolean value: {}".format(poly1, bool(poly1)))
     print("Polynomial: {}, boolean value: {}".format(poly0, bool(poly0)))
-
 
 
 
