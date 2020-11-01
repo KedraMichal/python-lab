@@ -11,17 +11,13 @@ class Polynomial:
         # (coeffs = 2,0,3) => 2x**2+0x+3
         self.coeffs_list = list(coeffs)
 
-    def calculate(self, *values):
+    def calculate(self, value):
         result = self.coeffs_list[-1]
         len_polynomial = len(self.coeffs_list)
-
-        if len(values) == (len(self.coeffs_list) - 1):
-            for v, c in zip(values, self.coeffs_list[:-1]):
-                result += c * (v ** (len_polynomial - 1))
-                len_polynomial -= 1
-            return result
-        else:
-            return "too many values or not enough values"
+        for c in (self.coeffs_list[:-1]):
+            result += c * (value ** (len_polynomial - 1))
+            len_polynomial -= 1
+        return result
 
     def __add__(self, other):
         add_result = []
