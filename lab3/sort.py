@@ -7,7 +7,7 @@ def insertion_sort(list_to_sort):
         while index > 0:
             if list_to_sort[index] < list_to_sort[index - 1]:
                 list_to_sort[index], list_to_sort[index - 1] = list_to_sort[index - 1], list_to_sort[index]
-                index -= 1
+                index -= 1  # spostrzeżenie: w innych językach by to nie przeszło (to nie błąd)
             else:
                 break
 

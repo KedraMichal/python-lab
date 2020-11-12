@@ -14,7 +14,7 @@ def count_n_grams(words_list, n):
             saved.append(word)
             i += 1
 
-        if i >= n:
+        if i >= n:  # else
             if " ".join(saved) not in n_grams:
                 n_grams[" ".join(saved)] = 1
             else:
@@ -43,14 +43,14 @@ def find_top20_with_ties(counted_words):
     i = 0
     top_20 = dict()
     for k, v in words.items():
-        if i == 20:
+        if i == 20: # ta 20 mogłaby być parametrem funkcji
             break
         else:
             top_20[k] = v
             i += 1
             value = v
 
-    for k, v in words.items():
+    for k, v in words.items():  # jeśli słownik jest posortowany, to czy jest sens przeglądać cały?
         if v == value:
             if (k, v) not in top_20:
                 top_20[k] = v
