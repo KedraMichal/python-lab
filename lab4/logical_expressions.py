@@ -1,5 +1,5 @@
-def check_if_opening_round_bracket(symbol):
-    if symbol == "(":
+def check_if_opening_round_bracket(symbol): # nazwa funkcji jest tak długa, że bardziej się opłaca pisać ten warunek, który zawiera
+    if symbol == "(":   # można pisać return warunek
         return True
     else:
         return False
@@ -13,7 +13,7 @@ def check_if_closing_round_bracket(symbol):
 
 
 def check_if_operator(symbol):
-    if symbol == "&" or symbol == "|":
+    if symbol == "&" or symbol == "|":  # polecam operator in dla list
         return True
     else:
         return False
@@ -21,7 +21,7 @@ def check_if_operator(symbol):
 
 def check_if_variable_or_constant(symbol):
     variables_and_constants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', "0", "1"]
-    if symbol in variables_and_constants:
+    if symbol in variables_and_constants:   # in działa też dla stringów
         return True
     else:
         return False
@@ -48,7 +48,7 @@ def check_if_logical_expression_is_correct(expression):
     variable_used_after_operator = True
     variable_used = False
     for i in expression:
-        if counter < 0:
+        if counter < 0: # można by sprawdzać tylko wtedy, kiedy dekrementuje Pan licznik
             return False
 
         if state == "letter state":
@@ -67,7 +67,7 @@ def check_if_logical_expression_is_correct(expression):
                 variable_used_after_operator = True
                 variable_used = True
             else:
-                return False
+                return False    # czy te dwa poprzednie "return False" są potrzebne?
 
         if state == "operator state":
             if check_if_blank(i):

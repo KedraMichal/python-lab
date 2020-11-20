@@ -1,10 +1,10 @@
-def two_positive_ints_input():
+def two_positive_ints_input():  # bardziej uniwerssalne jest one_positive_int_input wywołane dwa razy
     int1, int2 = 0, 0
     while type(int1) != int or type(int2) != int or int1 <= 0 or int2 <= 0:
         try:
             int1 = int(input("Choose positive int: "))
             int2 = int(input("Choose second positive int: "))
-        except:
+        except: # except powinien mieć podany typ wyjątku
             print("You need to pass positive integers")
 
     return int1, int2
@@ -12,7 +12,7 @@ def two_positive_ints_input():
 
 def get_prime_factors(int_number):
     prime_factors = {}
-    int_number_copy = int_number
+    int_number_copy = int_number    # takie "kopiowanie" nic nie daje
     while int_number_copy > 1:
         for i in range(2, int_number + 1):
             if int_number_copy % i == 0:
@@ -25,7 +25,7 @@ def get_prime_factors(int_number):
 
     return prime_factors
 
-
+# skomplikował Pan rzecz prostą: https://pl.wikipedia.org/wiki/Algorytm_Euklidesa
 def greatest_common_divisor(int1, int2):
     int1_prime_factors = get_prime_factors(int1)
     int2_prime_factors = get_prime_factors(int2)
