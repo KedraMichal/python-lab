@@ -16,7 +16,7 @@ class Paint:
                 except:
                     print("Wrong size!")
             else:
-                print("Name already taken or wrong name")
+                print("Name already taken")
         else:
                 print("Unknown figure type")
 
