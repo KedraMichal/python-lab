@@ -13,7 +13,7 @@ class Paint:
             if name not in self.names.keys():
                 try:
                     self.names[name] = Paint.figures[figure](name, *size)
-                except:
+                except: # nie piszemy except bez typu
                     print("Wrong size!")
             else:
                 print("Name already taken")
@@ -26,7 +26,7 @@ class Paint:
         else:
             print("Unknown name")
 
-    def command_line(self):
+    def command_line(self): # warto tę funkcję zdekomponować
         while True:
             command = input("Enter a command: ")
             command = command.lower()
@@ -97,3 +97,4 @@ class Paint:
 if __name__ == "__main__":
     c1 = Paint()
     c1.command_line()
+# da się stworzyć prostokąt z ujemnym bokiem
