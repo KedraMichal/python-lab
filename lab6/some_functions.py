@@ -1,12 +1,10 @@
-def is_float(number):
-    try:
-        float(number)
-    except:
-        raise ValueError
+def is_number(number):
+    if not type(number) in (float, int):
+        raise ValueError("U need to pass a float, not string")
 
 
 def linear_or_square_equation(a, b, c):
-    is_float(a), is_float(b), is_float(c)
+    is_number(a), is_number(b), is_number(c)
     if a != 0:
         delta = b**2-4*a*c
         if delta > 0:
@@ -28,7 +26,7 @@ def linear_or_square_equation(a, b, c):
 
 
 def equation_of_a_straight_line(x1, y1, x2, y2):
-    is_float(x1), is_float(y1), is_float(x2), is_float(y2)
+    is_number(x1), is_number(y1), is_number(x2), is_number(y2)
     if x1 == x2 and y1 == y2:
         return "Many equations of a straight line"
     elif x1 == x2:
@@ -42,4 +40,3 @@ def equation_of_a_straight_line(x1, y1, x2, y2):
         return "y={}x+{}".format(a, b)
 
     return "y={}x{}".format(a, b)
-
