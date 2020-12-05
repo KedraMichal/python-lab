@@ -1,6 +1,6 @@
 def is_number(number):
     if not type(number) in (float, int):
-        raise ValueError("U need to pass a float, not string")
+        raise ValueError("U need to pass a float, not string")  # a skąd wiadomo, że to string?
 
 
 def linear_or_square_equation(a, b, c):
@@ -23,7 +23,7 @@ def linear_or_square_equation(a, b, c):
         return "Infinitely many solutions"
     else:
         return None
-
+# raz liczba, raz krotka, raz None, raz napis
 
 def equation_of_a_straight_line(x1, y1, x2, y2):
     is_number(x1), is_number(y1), is_number(x2), is_number(y2)
