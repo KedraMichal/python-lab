@@ -46,10 +46,12 @@ def normalize_rows(data):
 
 def choose_label(data, which_col):
     label = data[:, which_col]
-    x = data[:, :-1]
+    x = np.delete(data, which_col, 1)
+
     return x, label
 
 
 if __name__ == "__main__":
     sample_data = read_csv('sample2.csv')
-    label, x = choose_label(sample_data, 16)
+    label1, x1 = choose_label(sample_data, 16)
+    print(label1, x1)
