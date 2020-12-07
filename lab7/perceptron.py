@@ -7,7 +7,7 @@ class Perceptron:
     def __init__(self, x, label):
         self.x = x
         self.label = label
-        self.weights = np.zeros(data.shape[1])
+        self.weights = np.zeros(x.shape[1])
         self.bias = np.array(0)
 
     def test(self):
@@ -38,9 +38,9 @@ class Perceptron:
 if __name__ == "__main__":
     data = read_csv("sample2.csv")
     x, label = choose_label(data, 16)
-    p1 = Perceptron(data, label)
+    p1 = Perceptron(x, label)
     p1.test()
-    print("Error is: {}".format(p1.error))
-    p1.train(epochs=3)
+    print("Error at the beginning: {}".format(p1.error))
+    p1.train(epochs=88)
     p1.test()
-    print("Error is: {}".format(p1.error))
+    print("Error after: {}".format(p1.error))
