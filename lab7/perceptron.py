@@ -11,7 +11,7 @@ class Perceptron:
         self.bias = np.array(0)
 
     def test(self):
-        self.output = np.dot(self.x, self.weights) + self.bias
+        self.output = np.dot(self.x, self.weights) + self.bias  # test na danych treningowych?
         for ind, value in enumerate(self.output):
             if value > 1:
                 self.output[ind] = 1
@@ -21,9 +21,9 @@ class Perceptron:
         diff = self.label - self.output
         self.error = np.sum(diff)
 
-    def train(self, epochs):
+    def train(self, epochs):    # warto dodawać wartości domyślne
         for i in range(epochs):
-            for ind, row in enumerate(self.x):
+            for ind, row in enumerate(self.x):  # polecam zip
                 a = np.dot(row, self.weights) + np.sum(self.bias)
                 if self.label[ind] == 0:
                     y = -1

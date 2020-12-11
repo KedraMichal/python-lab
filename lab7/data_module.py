@@ -6,7 +6,7 @@ def read_csv(filename):
     with open(filename, "r") as csv_file:
         data = []
         for line in csv_file:
-            numbers = line.replace("\n","").split(";")
+            numbers = line.replace("\n","").split(";")  # line.strip().split(";")
             data.append(numbers)
     number_of_col = len(data[0])
     data = [float(number) for row in data for number in row]
@@ -20,7 +20,7 @@ def normalize_column(data, which_col):
     mean = np.mean(col)
     std = np.std(col)
     for ind, x in enumerate(col):
-        col[ind] = (col[ind] - mean)/std
+        col[ind] = (col[ind] - mean)/std    # numpy wykonuje operacje element po elemencie nieporównanie wydajniej niż działa taka pętla
 
     return data
 
