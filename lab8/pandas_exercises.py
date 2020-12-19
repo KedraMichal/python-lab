@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
 
-def mean_gen_value(dataframe, col):
+def mean_gen_value(dataframe, col):    # nie o taką średnią chodzi
     grouped_gen_mean = dataframe.groupby("SOURCE_KEY").mean()
     grouped_gen_mean = grouped_gen_mean[col]
     mean_value = grouped_gen_mean.mean()
@@ -18,13 +18,13 @@ def plot_week_power(dataframe, source_key, start_date):
     end_date = start_date + timedelta(7)
 
     df_specified_gen = dataframe[dataframe["SOURCE_KEY"] == source_key]
-    df_specified_date = df_specified_gen[(df_specified_gen["DATE_TIME"] > start_date) & (df_specified_gen["DATE_TIME"] < end_date)]
+    df_specified_date = df_specified_gen[(df_specified_gen["DATE_TIME"] > start_date) & (df_specified_gen["DATE_TIME"] < end_date)] # z którejś strony przedział powinien być domknięty
     df_specified_date.plot(y="AC_POWER", x="DATE_TIME")
     plt.axhline(mean_col, c="red")
     plt.show()
 
 
-def gens_with_most_values_under_80percent(dataframe, how_many_gens):
+def gens_with_most_values_under_80percent(dataframe, how_many_gens):    # długa nazwa
     mean_col = mean_gen_value(dataframe, "AC_POWER")
 
     power_less = dataframe[["SOURCE_KEY", "AC_POWER"]]
