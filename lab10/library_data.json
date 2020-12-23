@@ -1,0 +1,67 @@
+{
+  "books": [
+    {
+      "1": [
+        {
+          "title": "Zabiæ drozda",
+          "author": "Harper Lee",
+          "publication_year": "1960",
+          "book_id": 1
+        },
+        "available"
+      ],
+      "2": [
+        {
+          "title": "Rok 1984",
+          "author": "George Orwell",
+          "publication_year": "1949",
+          "book_id": 2
+        },
+        "unavailable"
+      ],
+      "4": [
+        {
+          "title": "Dziady",
+          "author": "Adam Mickiewicz",
+          "publication_year": "1822",
+          "book_id": 4
+        },
+        "available"
+      ],
+      "5": [
+        {
+          "title": "Krzy¿acy",
+          "author": "Henryk Sienkiewicz",
+          "publication_year": "1900",
+          "book_id": 5
+        },
+        "available"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "adam123": {
+        "name": "Adam",
+        "surname": "Kowalski",
+        "login": "adam123",
+        "status": "admin"
+      },
+      "tomek123": {
+        "name": "Tomasz",
+        "surname": "Borek",
+        "login": "tomek123",
+        "status": "user"
+      },
+      "andrzej123": {
+        "name": "Andrzej",
+        "surname": "Kowalczyk",
+        "login": "andrzej123",
+        "status": "user"
+      }
+    }
+  ],
+  "books_waiting_to_return": [
+    2
+  ]
+}
