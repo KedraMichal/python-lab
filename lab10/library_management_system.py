@@ -24,7 +24,13 @@ class LibraryManagementSystem:
     def make_account(self):
         name = input("Podaj imie: ")
         surname = input("Podaj nazwisko: ")
-        status = int(input("Wybierz status konta: 1. User 2. Admin "))
+        while True:
+            try:
+                status = int(input("Wybierz status konta: 1. User 2. Admin "))
+                break
+            except ValueError:
+                print("Musisz wybrać numer")
+                continue
         login = input("Podaj login: ")
         while True:
             if login not in self.users.keys():
@@ -120,7 +126,11 @@ class LibraryManagementSystem:
     def run_system(self):
         self.read_library_data()
         while True:
-            option = int(input("Wybierz nr: 1. Załóż konto 2. Zaloguj się 3. Wyjdz "))
+            try:
+                option = int(input("Wybierz nr: 1. Załóż konto 2. Zaloguj się 3. Wyjdz "))
+            except ValueError:
+                print("Musisz podać numer")
+                continue
             if option == 1:
                 self.make_account()
             elif option == 2:
@@ -129,7 +139,11 @@ class LibraryManagementSystem:
                 while True:
                     if given_login in self.users.keys():
                         if self.users[given_login].status == "admin":
-                            new_options = int(input("Wybierz nr: 1. Dodaj książkę 2. Usuń książkę 3. Dodaje czytelnika 4. Przyjęcie zwrotu książek 5. Wyloguj "))
+                            try:
+                                new_options = int(input("Wybierz nr: 1. Dodaj książkę 2. Usuń książkę 3. Dodaje czytelnika 4. Przyjęcie zwrotu książek 5. Wyloguj "))
+                            except ValueError:
+                                print("Musisz podać numer")
+                                continue
                             if new_options == 1:
                                 self.add_book()
                             elif new_options == 2:
@@ -142,7 +156,11 @@ class LibraryManagementSystem:
                                 break
 
                         elif self.users[given_login].status == "user":
-                            new_options = int(input("Wybierz nr: 1. Przeszukiwanie katalogu 2. Wypożycz 3. Zwróć 4. Wyloguj "))
+                            try:
+                                new_options = int(input("Wybierz nr: 1. Przeszukiwanie katalogu 2. Wypożycz 3. Zwróć 4. Wyloguj "))
+                            except ValueError:
+                                print("Musisz podać numer")
+                                continue
                             if new_options == 1:
                                 self.see_available_books()
                             elif new_options == 2:
@@ -151,6 +169,7 @@ class LibraryManagementSystem:
                                 self.return_book()
                             elif new_options == 4:
                                 break
+
                     else:
                         given_login = input("Błędny login, spróbuj jescze raz: ")
             elif option == 3:
