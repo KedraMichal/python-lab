@@ -21,12 +21,17 @@ class User(Person):
 class Book:
     book_id = 1
 
-    def __init__(self, title, author, publication_year):
+    def __init__(self, title, author, publication_year, get_book_id=0):
         self.title = title
         self.author = author
         self.publication_year = publication_year
-        self.book_id = Book.book_id
-        Book.book_id += 1
+        if get_book_id != 0:
+            self.book_id = get_book_id
+            if get_book_id > Book.book_id:
+                Book.book_id = get_book_id + 1
+        else:
+            self.book_id = Book.book_id
+            Book.book_id += 1
 
     def __str__(self):
         return "Tytuł: {}, author: {}, rok publikacji: {}, id książki: {}".format(self.title, self.author, self.publication_year, self.book_id)
