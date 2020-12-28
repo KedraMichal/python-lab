@@ -36,9 +36,9 @@ def line_style2(dataframe, source_key, start_date, which_col, color):
     plt.plot(df["DATE_TIME"], df[which_col], "--", linewidth=1, color=color)
 
 
-def plot1(power_column, start_date):
+def plot1(power_column, start_date):    # mało mówiąca nazwa
     line_style1(df, "bvBOhCH3iADSZry", start_date, power_column, "red")
-    line_style1(df, "3PZuoBAID5Wc2HD", start_date, power_column, "black")
+    line_style1(df, "3PZuoBAID5Wc2HD", start_date, power_column, "black") # DRY
     line_style2(df, "7JYdWkrLSPkdwr4", start_date, power_column, "blue")
     line_style2(df, "VHMLBKoKgIrUVDU", start_date, power_column, "green")
     line_style2(df, "ZnxXDlPa8U1GXgE", start_date, power_column, "purple")
