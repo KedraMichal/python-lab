@@ -11,7 +11,7 @@ class LibraryManagementSystem:
         self.books_waiting_to_return = []
 
     def add_book(self):
-        title = input("Podaj tytuł książki: ")
+        title = input("Podaj tytuł książki: ")  # wymieszana logika z interfejsem
         author = input("Podaj autora: ")
         publication_y = input("Podaj rok publikacji: ")
         new_book = Book(title, author, publication_y)
@@ -127,7 +127,7 @@ class LibraryManagementSystem:
         self.read_library_data()
         while True:
             try:
-                option = int(input("Wybierz nr: 1. Załóż konto 2. Zaloguj się 3. Wyjdz "))
+                option = int(input("Wybierz nr: 1. Załóż konto 2. Zaloguj się 3. Wyjdz "))  # DRY
             except ValueError:
                 print("Musisz podać numer")
                 continue

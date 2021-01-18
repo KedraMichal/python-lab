@@ -11,7 +11,7 @@ class Admin(Person):
         self.status = "admin"
 
 
-class User(Person):
+class User(Person): # te dwie klasy są identyczne, różnią się tylko wartością jednego pola
     def __init__(self, name, surname, login):
         super().__init__(name, surname)
         self.login = login
@@ -21,7 +21,7 @@ class User(Person):
 class Book:
     book_id = 1
 
-    def __init__(self, title, author, publication_year, get_book_id=0):
+    def __init__(self, title, author, publication_year, get_book_id=0): # get_book_id brzmi jak nazwa funkcji
         self.title = title
         self.author = author
         self.publication_year = publication_year
